@@ -2,6 +2,7 @@
 
 class TasksController < ApplicationController
   def index
-    render html: "Tasks ka index action"
+    tasks = Task.all
+    render status: :ok, json: { tasks: tasks }
   end
 end
